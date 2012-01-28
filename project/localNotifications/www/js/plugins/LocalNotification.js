@@ -1,10 +1,12 @@
 /**
 	Phonegap LocalNotification Plugin
 	Copyright (c) Greg Allen 2011
+	Updates Drew Dahlman 2012
+	
 	MIT Licensed
 
 	Usage:
-	plugins.localNotification.add({ date: new Date(), message: 'This is a notification', badge: 1, id: 123 });
+	plugins.localNotification.add({ date: new Date(), message: 'This is a notification', badge: 1, id: 123, sound:'sub.caf',background:'app.background()',foreground:'app.running()' });
 	plugins.localNotification.cancel(123);
 	plugins.localNotification.cancelAll();
 **/
@@ -19,7 +21,10 @@ if (typeof PhoneGap !== "undefined") {
             hasAction: true,
             action: 'View',
             badge: 0,
-            id: 0
+            id: 0,
+			sound:'',
+			background:'',
+			foreground:''
         };
         for (var key in defaults) {
             if (typeof options[key] !== "undefined")
@@ -37,7 +42,6 @@ if (typeof PhoneGap !== "undefined") {
 	
 	LocalNotification.prototype.cancelAll = function(id) {
         PhoneGap.exec("LocalNotification.cancelAllNotifications");
-		console.log("LOCAL CANCEL");
     };
 
 	PhoneGap.addConstructor(function() 

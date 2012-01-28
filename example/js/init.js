@@ -27,14 +27,17 @@ var notification = {
 	// This will fire after 60 seconds
 	local_min:function(){
 		var d = new Date();
-		d = d.getTime() + 60*1000; //60 seconds from now
+		d = d.getTime() + 3*1000; //60 seconds from now
 		d = new Date(d);
 		plugins.localNotification.add({
 			date: d,
 			message: 'This just fired after a minute!',
 			hasAction: true,
 			badge: 1,
-			id: '123'
+			id: '123',
+			sound:'horn.caf',
+			background:'app.background()',
+			foreground:'app.running()'
 		});
 	},
 	
@@ -68,7 +71,6 @@ var notification = {
 		plugins.localNotification.cancelAll();
 	},
 	tomorrow:function(hh,mm,days){
-		
 		// Now lets make a new date
 		var d = new Date();
 			d = d.setSeconds(00);
@@ -99,15 +101,27 @@ var app = {
 		document.addEventListener("deviceready", app.deviceReady, false);
 	},
 	deviceReady:function(){
-		//app.init();
+		app.init();
 	},
 	init:function(){
-		
+		var d = new Date();
+		d = d.getTime() + 3*1000; //60 seconds from now
+		d = new Date(d);
+		plugins.localNotification.add({
+			date: d,
+			message: 'This just fired after a minute!',
+			hasAction: true,
+			badge: 1,
+			id: '123',
+			sound:'horn.caf',
+			background:'app.background()',
+			foreground:'app.running()'
+		});
 	},
 	background:function(){
-		
+		console.log("I was in the background but i'm back now!");
 	},
 	running:function(){
-		
+		console.log("I am currently running, what should I do?");
 	}
 };

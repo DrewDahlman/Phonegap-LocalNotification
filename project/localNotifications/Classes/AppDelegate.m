@@ -109,31 +109,29 @@
 	[ super dealloc ];
 }
 
-// ADD OUR NOTIFICATION CODE!
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    /*
-     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-     */
-}
+// ADD OUR NOTIFICATION CODE
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification 
 {
     
     UIApplicationState state = [application applicationState];
     if (state == UIApplicationStateInactive) {
         // WAS IN BG
-        NSLog(@"HIYA!B");
+        NSLog(@"I was in the background");
+        
+        NSString *notCB = [notification.userInfo objectForKey:@"background"];
         NSString * jsCallBack = [NSString 
-                                 stringWithFormat:@"app.init();"]; 
+                                 stringWithFormat:@"%@", notCB]; 
         [self.webView stringByEvaluatingJavaScriptFromString:jsCallBack];         
         application.applicationIconBadgeNumber = 0;
+        
     }
     else {
         // WAS RUNNING
-        NSLog(@"HIYA!A");
+        NSLog(@"I was currently active");
         
+        NSString *notCB = [notification.userInfo objectForKey:@"forground"];
         NSString * jsCallBack = [NSString 
-                                 stringWithFormat:@"app.init();"]; 
+                                 stringWithFormat:@"%@", notCB]; 
         [self.webView stringByEvaluatingJavaScriptFromString:jsCallBack];         
         application.applicationIconBadgeNumber = 0;
     }                 

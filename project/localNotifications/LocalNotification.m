@@ -9,11 +9,15 @@
 
 @implementation LocalNotification
 - (void)addNotification:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options {
+    
+    // notif settings
 	double timestamp = [[options objectForKey:@"date"] doubleValue];
 	NSString *msg = [options objectForKey:@"message"];
 	NSString *action = [options objectForKey:@"action"];
 	NSString *notificationId = [options objectForKey:@"id"];
-   // NSString *notificationCallBack = [options objectForKey:@"callback"];
+    NSString *sound = [options objectForKey:@"sound"];
+    NSString *bg = [options objectForKey:@"background"];
+    NSString *fg = [options objectForKey:@"foreground"];
 	NSInteger badge = [[options objectForKey:@"badge"] intValue];
 	bool hasAction = ([[options objectForKey:@"hasAction"] intValue] == 1)?YES:NO;
 	
@@ -26,15 +30,16 @@
 	
 	notif.alertBody = ([msg isEqualToString:@""])?nil:msg;
 	notif.alertAction = action;
-	notif.soundName = UILocalNotificationDefaultSoundName;
-	notif.applicationIconBadgeNumber = badge;
+    
+    notif.soundName = sound;
+    notif.applicationIconBadgeNumber = 0;
 	
-	NSDictionary *userDict = [NSDictionary dictionaryWithObject:notificationId 
-														 forKey:@"notificationId"];
+	NSDictionary *userDict = [NSDictionary dictionaryWithObjectsAndKeys:notificationId,@"notificationId",bg,@"background",fg,@"forground",nil];
+    
     notif.userInfo = userDict;
 	
 	[[UIApplication sharedApplication] scheduleLocalNotification:notif];
-	NSLog(@"Notification Set: %@ (ID: %@, Badge: %i)", date, notificationId, badge);
+	NSLog(@"Notification Set: %@ (ID: %@, Badge: %i, sound: %@,callback: %@)", date, notificationId, badge, sound,bg);
 	//[notif release];
 }
 
@@ -54,5 +59,7 @@
 	NSLog(@"All Notifications cancelled");
 	[[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
+
+
 
 @end

@@ -8,4 +8,12 @@ It also explains how to create a callback to your app when it is launched from t
 the full write up is here
 http://www.drewdahlman.com/meusLabs/?p=84
 
+Added options to repeat notifications on a daily, weekly, or yearly interval. Use the repeat option:
+
+window.plugins.localNotification.add({
+  date: (3).days().fromNow(),
+  message: 'Hello world!',
+  repeat: 'weekly'
+})
+
 enjoy!

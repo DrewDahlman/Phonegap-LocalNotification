@@ -34,7 +34,7 @@
 	notif.fireDate = date;
 	notif.hasAction = hasAction;
 	notif.timeZone = [NSTimeZone defaultTimeZone];
-    notif.repeatInterval = [repeatDict objectForKey: repeat];
+    notif.repeatInterval = [[repeatDict objectForKey: repeat] intValue];
 	
 	notif.alertBody = ([msg isEqualToString:@""])?nil:msg;
 	notif.alertAction = action;

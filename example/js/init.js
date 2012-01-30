@@ -12,6 +12,14 @@ One thing that is deceptive about the LocalNotifications plugin is that when it 
 has been created it shows it based on the timezone +0000 which can throw you off.
 
 in the call for setting the notification we simply call notification.local_timed("13:00") - note that I supplied a string.
+
+The ability to set repeating notifications has been added! 
+- daily
+- weekly
+- monthly
+- yearly
+
+
 */
 
 
@@ -31,6 +39,7 @@ var notification = {
 		d = new Date(d);
 		plugins.localNotification.add({
 			date: d,
+			repeat:'daily',
 			message: 'This just fired after a minute!',
 			hasAction: true,
 			badge: 1,
@@ -61,10 +70,14 @@ var notification = {
 			d = new Date(d);
 		plugins.localNotification.add({
 			date: d,
+			repeat:'daily',
 			message: 'This went off just as expected!',
 			hasAction: true,
 			badge: 1,
-			id: '123'
+			id: '123',
+			sound:'horn.caf',
+			background:'app.background()',
+			foreground:'app.running()'
 		});
 	},
 	clear:function(){
@@ -86,10 +99,14 @@ var notification = {
 			
 		plugins.localNotification.add({
 			date: d,
+			repeat:'daily',
 			message: 'This went off just as expected!',
 			hasAction: true,
 			badge: 1,
-			id: '123'
+			id: '123',
+			sound:'horn.caf',
+			background:'app.background()',
+			foreground:'app.running()'
 		});
 	}
 	

@@ -104,19 +104,7 @@ var app = {
 		app.init();
 	},
 	init:function(){
-		var d = new Date();
-		d = d.getTime() + 3*1000; //60 seconds from now
-		d = new Date(d);
-		plugins.localNotification.add({
-			date: d,
-			message: 'This just fired after a minute!',
-			hasAction: true,
-			badge: 1,
-			id: '123',
-			sound:'horn.caf',
-			background:'app.background()',
-			foreground:'app.running()'
-		});
+		
 	},
 	background:function(){
 		console.log("I was in the background but i'm back now!");

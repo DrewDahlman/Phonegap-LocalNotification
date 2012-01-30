@@ -9,7 +9,13 @@
 
 @implementation LocalNotification
 - (void)addNotification:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options {
-    
+    NSMutableDictionary *repeatDict = [[NSMutableDictionary alloc] init];
+    [repeatDict setObject:[NSNumber numberWithInt:NSDayCalendarUnit] forKey:@"daily"];
+    [repeatDict setObject:[NSNumber numberWithInt:NSWeekCalendarUnit] forKey:@"weekly"];
+    [repeatDict setObject:[NSNumber numberWithInt:NSMonthCalendarUnit] forKey:@"monthly"];
+    [repeatDict setObject:[NSNumber numberWithInt:NSYearCalendarUnit] forKey:@"yearly"];
+    [repeatDict setObject:[NSNumber numberWithInt:0] forKey:@""];
+
     // notif settings
 	double timestamp = [[options objectForKey:@"date"] doubleValue];
 	NSString *msg = [options objectForKey:@"message"];
@@ -18,6 +24,7 @@
     NSString *sound = [options objectForKey:@"sound"];
     NSString *bg = [options objectForKey:@"background"];
     NSString *fg = [options objectForKey:@"foreground"];
+    NSString *repeat = [options objectForKey:@"repeat"];
 	NSInteger badge = [[options objectForKey:@"badge"] intValue];
 	bool hasAction = ([[options objectForKey:@"hasAction"] intValue] == 1)?YES:NO;
 	
@@ -27,6 +34,7 @@
 	notif.fireDate = date;
 	notif.hasAction = hasAction;
 	notif.timeZone = [NSTimeZone defaultTimeZone];
+    notif.repeatInterval = [[repeatDict objectForKey: repeat] intValue];
 	
 	notif.alertBody = ([msg isEqualToString:@""])?nil:msg;
 	notif.alertAction = action;

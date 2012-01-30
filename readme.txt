@@ -8,7 +8,7 @@ It also explains how to create a callback to your app when it is launched from t
 the full write up is here
 http://www.drewdahlman.com/meusLabs/?p=84
 
-////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
 
 - UPDATES
 Added options to repeat notifications on a daily, weekly, monthly, or yearly interval. Use the repeat option:

@@ -20,6 +20,7 @@ if (typeof PhoneGap !== "undefined") {
             message: '',
             hasAction: true,
             action: 'View',
+            repeat: '',
             badge: 0,
             id: 0,
 			sound:'',

@@ -122,6 +122,11 @@
         NSString * jsCallBack = [NSString 
                                  stringWithFormat:@"%@", notCB]; 
         [self.webView stringByEvaluatingJavaScriptFromString:jsCallBack];         
+        
+        /* Use this line if running on Cordova
+        [self.viewController.webView stringByEvaluatingJavaScriptFromString:jsCallBack];
+        */
+        
         application.applicationIconBadgeNumber = 0;
         
     }
@@ -132,7 +137,13 @@
         NSString *notCB = [notification.userInfo objectForKey:@"forground"];
         NSString * jsCallBack = [NSString 
                                  stringWithFormat:@"%@", notCB]; 
-        [self.webView stringByEvaluatingJavaScriptFromString:jsCallBack];         
+        
+        /* Use this line if running on Cordova
+        [self.webView stringByEvaluatingJavaScriptFromString:jsCallBack];
+        */
+        
+        [self.webView stringByEvaluatingJavaScriptFromString:jsCallBack];
+        
         application.applicationIconBadgeNumber = 0;
     }                 
 }

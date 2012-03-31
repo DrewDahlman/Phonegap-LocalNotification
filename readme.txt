@@ -11,12 +11,18 @@ http://www.drewdahlman.com/meusLabs/?p=84
 /////////////////////////////////////////////////////////////////////////////////////
 
 - UPDATES
-Added options to repeat notifications on a daily, weekly, monthly, or yearly interval. Use the repeat option:
+-Added options to repeat notifications on a daily, weekly, monthly, or yearly interval. Use the repeat option:
+
+3.31.12 - 
+Added support for Cordova Please check LocalNotification.h to comment and uncomment the correct code.
+
 
 window.plugins.localNotification.add({
   date: d, // your set date object
   message: 'Hello world!',
-  repeat: 'weekly' // will fire every week on this day
+  repeat: 'weekly', // will fire every week on this day
+  badge: 1,
 })
 
 enjoy!
+

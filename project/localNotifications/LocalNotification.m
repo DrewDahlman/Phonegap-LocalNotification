@@ -1,7 +1,7 @@
 //
 //  LocalNotification.m
 //	Phonegap LocalNotification Plugin
-//	Copyright (c) Greg Allen 2011
+//	Copyright (c) Greg Allen 2011 & 2012 Drew Dahlman
 //	MIT Licensed
 
 #import "LocalNotification.h"
@@ -40,7 +40,7 @@
 	notif.alertAction = action;
     
     notif.soundName = sound;
-    notif.applicationIconBadgeNumber = 0;
+    notif.applicationIconBadgeNumber = badge;
 	
 	NSDictionary *userDict = [NSDictionary dictionaryWithObjectsAndKeys:notificationId,@"notificationId",bg,@"background",fg,@"forground",nil];
     

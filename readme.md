@@ -5,36 +5,35 @@ This example goes through in detail how to set a timer for the future based on h
 
 It also explains how to create a callback to your app when it is launched from that notification.
 
-the full write up is here
+the full write up is here:<br>
 http://www.drewdahlman.com/meusLabs/?p=84
 
-/////////////////////////////////////////////////////////////////////////////////////
 
-NOTES:
-A breakdown of options - 
-- date ( this expects a date object )
-- message ( the message that is displayed )
-- repeat ( has the options of 'weekly','daily','monthly','yearly')
-- badge ( displays number badge to notification )
-- foreground ( a javascript function to be called if the app is running )
-- background ( a javascript function to be called if the app is in the background )
-- sound ( a sound to be played, the sound must be located in your project's resources and must be a caf file )
+<b>NOTES</b>:<br>
+A breakdown of options - <br>
+- date ( this expects a date object )<br>
+- message ( the message that is displayed )<br>
+- repeat ( has the options of 'weekly','daily','monthly','yearly')<br>
+- badge ( displays number badge to notification )<br>
+- foreground ( a javascript function to be called if the app is running )<br>
+- background ( a javascript function to be called if the app is in the background )<br>
+- sound ( a sound to be played, the sound must be located in your project's resources and must be a caf file )<br>
 
-/////////////////////////////////////////////////////////////////////////////////////
-- UPDATES:
-3.31.12 - 
+
+- <b>UPDATES</b>:<br>
+3.31.12 - <br>
 Added support for Cordova Please check LocalNotification.h to comment and uncomment the correct code.
 
 
-window.plugins.localNotification.add({
-  date: d, // your set date object
-  message: 'Hello world!',
-  repeat: 'weekly', // will fire every week on this day
-  badge: 1,
-  foreground:'app.foreground',
-  background:'app.background',
-  sound:'sub.caf'
+window.plugins.localNotification.add({<br>
+  date: d, // your set date object<br>
+  message: 'Hello world!',<br>
+  repeat: 'weekly', // will fire every week on this day<br>
+  badge: 1,<br>
+  foreground:'app.foreground',<br>
+  background:'app.background',<br>
+  sound:'sub.caf'<br>
 })
-
+<br>
 enjoy!
 

@@ -24,16 +24,18 @@ A breakdown of options - <br>
 3.31.12 - <br>
 Added support for Cordova Please check LocalNotification.h to comment and uncomment the correct code.
 
-
+<b>EXAMPLE</b>
+<code>
 window.plugins.localNotification.add({<br>
-  date: d, // your set date object<br>
-  message: 'Hello world!',<br>
-  repeat: 'weekly', // will fire every week on this day<br>
-  badge: 1,<br>
-  foreground:'app.foreground',<br>
-  background:'app.background',<br>
-  sound:'sub.caf'<br>
-})
+	date: d, // your set date object<br>
+	message: 'Hello world!',<br>
+	repeat: 'weekly', // will fire every week on this day<br>
+	badge: 1,<br>
+	foreground:'app.foreground',<br>
+	background:'app.background',<br>
+	sound:'sub.caf'<br>
+});
+</code>
 <br>
 enjoy!
 

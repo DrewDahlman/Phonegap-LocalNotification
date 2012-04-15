@@ -20,7 +20,7 @@ A breakdown of options - <br>
 - sound ( a sound to be played, the sound must be located in your project's resources and must be a caf file )<br>
 
 
-- <b>UPDATES</b>:<br>
+<b>UPDATES</b>:<br>
 3.31.12 - <br>
 Added support for Cordova Please check LocalNotification.h to comment and uncomment the correct code.
 

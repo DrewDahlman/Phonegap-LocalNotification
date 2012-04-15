@@ -24,8 +24,8 @@ A breakdown of options - <br>
 3.31.12 - <br>
 Added support for Cordova Please check LocalNotification.h to comment and uncomment the correct code.
 
-<b>EXAMPLE</b>
-<code>
+<b>EXAMPLE</b><br>
+<pre>
 window.plugins.localNotification.add({<br>
 	date: d, // your set date object<br>
 	message: 'Hello world!',<br>
@@ -35,7 +35,7 @@ window.plugins.localNotification.add({<br>
 	background:'app.background',<br>
 	sound:'sub.caf'<br>
 });
-</code>
+</pre>
 <br>
 enjoy!
 

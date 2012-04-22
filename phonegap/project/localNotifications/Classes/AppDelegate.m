@@ -134,7 +134,7 @@
         // WAS RUNNING
         NSLog(@"I was currently active");
         
-        NSString *notCB = [notification.userInfo objectForKey:@"forground"];
+        NSString *notCB = [notification.userInfo objectForKey:@"foreground"];
         NSString * jsCallBack = [NSString 
                                  stringWithFormat:@"%@", notCB]; 
         

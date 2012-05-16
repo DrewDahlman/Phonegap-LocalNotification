@@ -6,7 +6,7 @@ This example goes through in detail how to set a timer for the future based on h
 It also explains how to create a callback to your app when it is launched from that notification.
 
 the full write up is here:<br>
-http://www.drewdahlman.com/meusLabs/?p=84
+http://www.drewdahlman.com/meusLabs/?p=117
 
 
 <b>NOTES</b>:<br>

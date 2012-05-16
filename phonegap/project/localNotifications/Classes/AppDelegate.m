@@ -119,13 +119,12 @@
         NSLog(@"I was in the background");
         
         NSString *notCB = [notification.userInfo objectForKey:@"background"];
-        NSString * jsCallBack = [NSString 
-                                 stringWithFormat:@"%@", notCB]; 
-        [self.webView stringByEvaluatingJavaScriptFromString:jsCallBack];         
+        NSString *notID = [notification.userInfo objectForKey:@"notificationId"];
+
+	    NSString * jsCallBack = [NSString 
+	                             stringWithFormat:@"%@(%@)", notCB,notID];        
         
-        /* Use this line if running on Cordova
-        [self.viewController.webView stringByEvaluatingJavaScriptFromString:jsCallBack];
-        */
+        [self.webView stringByEvaluatingJavaScriptFromString:jsCallBack];
         
         application.applicationIconBadgeNumber = 0;
         
@@ -135,12 +134,10 @@
         NSLog(@"I was currently active");
         
         NSString *notCB = [notification.userInfo objectForKey:@"foreground"];
-        NSString * jsCallBack = [NSString 
-                                 stringWithFormat:@"%@", notCB]; 
-        
-        /* Use this line if running on Cordova
-        [self.webView stringByEvaluatingJavaScriptFromString:jsCallBack];
-        */
+        NSString *notID = [notification.userInfo objectForKey:@"notificationId"];
+
+	    NSString * jsCallBack = [NSString 
+	                             stringWithFormat:@"%@(%@)", notCB,notID];
         
         [self.webView stringByEvaluatingJavaScriptFromString:jsCallBack];
         

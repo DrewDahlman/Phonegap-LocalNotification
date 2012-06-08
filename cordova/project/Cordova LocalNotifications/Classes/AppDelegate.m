@@ -108,6 +108,8 @@
         [[UIApplication sharedApplication] setStatusBarOrientation:newOrient];
     }
     
+    application.applicationIconBadgeNumber = 0;
+    
     [self.window addSubview:self.viewController.view];
     [self.window makeKeyAndVisible];
     

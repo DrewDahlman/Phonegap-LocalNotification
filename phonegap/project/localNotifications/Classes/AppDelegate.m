@@ -38,6 +38,7 @@
 		self.invokeString = [url absoluteString];
 		NSLog(@"localNotifications launchOptions = %@",url);
 	}*/
+	application.applicationIconBadgeNumber = 0;
 	
 	return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }

@@ -52,7 +52,7 @@
 }
 
 - (void)cancelNotification:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options {
-	NSString *notificationId = [arguments objectAtIndex:0];
+        NSString *notificationId = [NSString stringWithFormat:@"%@",[arguments objectAtIndex:0]];
 	NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
 	for (UILocalNotification *notification in notifications) {
 		NSString *notId = [notification.userInfo objectForKey:@"notificationId"];

@@ -23,15 +23,15 @@ if (typeof PhoneGap !== "undefined") {
             repeat: '',
             badge: 0,
             id: 0,
-			sound:'',
-			background:'',
-			foreground:''
+            sound:'',
+            background:'',
+            foreground:''
         };
         for (var key in defaults) {
             if (typeof options[key] !== "undefined")
                 defaults[key] = options[key];
         }
-		if (typeof defaults.date == 'object') {
+		if (defaults.date instanceof Date) {
 			defaults.date = Math.round(defaults.date.getTime()/1000);
 		}
 		PhoneGap.exec("LocalNotification.addNotification", defaults);

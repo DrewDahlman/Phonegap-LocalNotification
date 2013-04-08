@@ -1,7 +1,7 @@
 //
 //  LocalNotification.h
 //	Phonegap LocalNotification Plugin
-//	Copyright (c) Greg Allen 2011 & 2012 Drew Dahlman
+//	Copyright (c) Greg Allen 2011 & 2013 Drew Dahlman
 //	MIT Licensed
 
 #import <Foundation/Foundation.h>

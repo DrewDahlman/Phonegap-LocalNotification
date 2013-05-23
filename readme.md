@@ -130,4 +130,7 @@ function background(id){
 - Added Notification ID's to callback.
 - Fixed spelling error for 'foreground'
 - Notice that you no longer have to call your background or foreground functions with the (). This is now added by the plugin on the objective-c side of things.
+<i>5.23.2013</i>
+- Merged Code from Olivier Lesnicki. for 2.3+ support
+- Updated Readme
 

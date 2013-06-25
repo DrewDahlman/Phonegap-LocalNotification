@@ -43,8 +43,11 @@ Using the plugin
 		soundName       : "beep.caf",
 		badge           : 0,
 		notificationId  : 123,
-		callBack        : function(notificationId){ 
-			alert("Hello World! This alert was triggered by notification" + notificationId); 
+		foreground      : function(notificationId){ 
+			alert("Hello World! This alert was triggered by notification " + notificationId); 
+		},
+		background	: function(notificationId){
+			alert("Hello World! This alert was triggered by notification " + notificationId);
 		}    		
 	});
 
@@ -54,4 +57,3 @@ To Do
 
 - Implement badges (currently property is ignored)
 - JavaScript validation
-- Different callback if the app was in the background
